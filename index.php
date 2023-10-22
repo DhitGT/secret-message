@@ -48,8 +48,8 @@
                 </div>
                 <p class="info-txt">Explore More</p>
                 <div class="destination">
-                    <a onclick="scrollToSection('about')" class="desti-item"> MENFES </a>
-                    <a onclick="scrollToSection('project')" class="desti-item"> SEND SECRET MAIL </a>
+                    <a onclick="scrollToSection('menfess')" class="desti-item"> MENFES </a>
+                    <a onclick="scrollToSection('ngl')" class="desti-item">SECRET MAIL </a>
                 </div>
             </div>
             <div class="body-2">
@@ -99,7 +99,7 @@
                     </div>
                     <div class="action">
                         <div class="action-item">
-                            <a href="" class="btn btn-info">Lihat Lebih Banyak Menfess</a>
+                            <a href="menfess/index.php" class="btn btn-info">Lihat Lebih Banyak Menfess</a>
                         </div>
                     </div>
                 </div>
@@ -163,35 +163,8 @@
             </div>
         </div>
     </section>
-    <footer>
-        <div class="footer-group">
-            <div class="footer-1">  
-                <h5>Contact</h5>
-                <ul>
-                    <li>
-                        <a href="mailto:dheep.co@gmail.com">dheep.co@gmail.com</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="footer-2">
-                <h5>Powered By</h5>
-                <ul>
-                    <li>
-                        <p>Boostrap 5</p>
-                    </li>
-                </ul>
-            </div>
-            <div class="footer-3">
-                <h5>Social Media</h5>
-                <ul>
-                    <li>
-                        <p>instagram : @d.dheepy</p>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <p align="center">&copy; dheep.site All Rights Reserved</p>
-    </footer>
+    <?php include '../footer.php' ?>
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script>
         // JavaScript function to scroll to a section with an offset
