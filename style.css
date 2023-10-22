@@ -1,0 +1,361 @@
+body {
+    /* background: linear-gradient(227deg,#273a3a,#0e7474,#083e3e,#083e3e);
+    background-size: 240% 240%;
+    animation: gradient-animation 16s ease infinite; */
+    /* background-repeat: no-repeat; */
+
+    margin-top: 6rem;
+    background-color: #131E28;
+
+}
+
+
+nav{
+    background-color: #0F161C;
+    width: 100vw;
+    display: flex;
+    padding: 10px 3rem ;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 20;
+}
+
+nav ul{
+    display: flex;
+    width: 30%;
+    justify-content: space-between;
+}
+nav ul li{
+    list-style: none;
+    color: aliceblue;
+    cursor: pointer;
+}
+
+nav ul li:hover{
+    text-decoration: underline;
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: aliceblue;
+}
+
+nav .logo{
+    color: aquamarine;
+}
+
+
+#bodys{
+    display: flex;
+    width: 100%;
+    min-height: 30rem;
+    margin-top: 2rem;
+    background-color: #0f161c;
+    border-radius: 2em;
+}
+.body-1{
+    width: 80%;
+    padding: 1rem ;
+    padding-left: 2rem;
+}
+
+.body-1 .brand{
+    color: aliceblue;
+    font-weight: 500;
+    font-size: 70px;
+}
+
+.badge{
+    width: 50%;
+    margin-bottom:1rem ;
+    display: flex;  
+}
+
+.badge-item{
+    color: #0F161C;
+    padding: 5px;
+    background-color: cyan;
+    border-radius: 5px;
+    margin-right: 5%;
+    transition: all 0.4s;
+}
+
+.badge-item:hover{
+    cursor: pointer;
+}
+
+.body-1 .quotes{
+    color: #c8d4e0;
+    margin-bottom:5rem ;
+}
+
+.info-txt{
+    color: aliceblue;
+}
+
+.body-1 .destination{
+    display: flex;
+}
+
+.desti-item{
+    padding: 15px;
+    border-radius: 5px;
+    background-color:cyan;
+    margin-right: 5%;
+    z-index: 10;
+    color: #0F161C;
+    text-decoration: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.4s;
+}
+
+.desti-item:hover, .badge-item:hover{
+    color: cyan;
+    background-color: #0F161C;
+}
+
+.body-2{
+    padding-left: 16%;
+    width: 50%;
+
+
+  
+}
+
+.bg-img {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.062));
+    z-index: 1;
+    pointer-events: none; /* to make sure the overlay doesn't interfere with click events on the image */
+}
+
+#menfess{
+margin-top: 10rem;
+min-height: 50vh;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+
+}
+
+.card-menfess{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    background-color: #0F161C;
+    border-radius: 2em;
+    padding: 2em;
+    justify-content: space-between;
+}
+
+.menfess-left{
+    max-width: 30%;
+    overflow: hidden;
+    border-radius: 1em;
+}
+.menfess-right{
+    width: 60%;
+    color: #c8d4e0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: justify ;
+}
+
+.menfess-example{
+    background-color: #c8d4e0;
+    min-width: 20rem;
+    min-height:15rem ;
+    padding: 1em;
+    text-align: justify;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.exam-bottom{
+    display: flex;
+    gap: 2em;
+}
+
+.menfess-right-info{
+    margin-bottom: auto;
+}
+
+.action, .action-item{
+    margin-top: auto;
+    height: auto;
+    transition: all 1s;
+}
+
+#ngl{
+    color: #e0e4e7;
+    margin-top: 10rem;
+    margin-bottom: 10rem;
+}
+
+.ngl-wrapper{
+    display: flex;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}  
+
+.ngl-top{
+    background-color: #0F161C;
+    padding: 1em;
+    border-radius: 1em;
+}
+
+
+.ngl-bottom{
+    margin-top: 2rem;
+    background-color: #0f161c;
+    padding: 1em;
+    border-radius: 1em;
+}
+
+.ngl-theme{
+    display: flex;
+    margin-top: 3em;
+    justify-content: space-evenly;
+}
+.theme-item{
+    padding: 1em;
+    color: #0F161C;
+    max-width: 15rem;
+    min-height: 5rem;
+    border-radius: 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between  ;
+    box-shadow: 3px 3px 3px 4px rgba(0, 0, 0, 0.493);
+}
+
+footer{
+    padding: 2em;
+    position: relative;
+    bottom: 0;
+    color: #e0e4e7;
+    width: 100%;
+    min-height: 15rem;
+    background-color: #0F161C;
+}
+.footer-group{
+    margin-bottom: 5rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+
+}
+
+  @keyframes gradient-animation {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  .menfess-example, .theme-item {
+    background: linear-gradient(300deg,#e3e998,#8cebc7,#a060dd);
+    background-size: 180% 180%;
+    animation: gradient-animation 10s ease infinite;
+  }
+  
+  @keyframes gradient-animation {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  .action-item a:hover, .theme-item a:hover {
+    transition: all 1s;
+
+    background: linear-gradient(300deg,rgb(15, 120, 155),rgb(98, 217, 226),rgb(89, 89, 194));
+    background-size: 180% 180%;
+    animation: gradient-animation 3s ease infinite;
+  }
+
+  .to::before{
+    content: '';
+    animation: to infinite 15s ease-in-out;
+  }
+  .message::before{
+    content: '';
+    animation: message infinite 15s ease-in-out;
+  }
+  .from::before{
+    content: '';
+    animation: from infinite 15s ease-in-out;
+  }
+  
+  @keyframes gradient-animation {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  @keyframes from{
+    0%{
+        content: 'From : No One';
+    }30%{
+        content: 'From : Your Crush';
+    }60%{
+        content: 'From : Manusia';
+    }80%{
+        content: 'From : Secret';
+    }100%{
+        content: 'From : No One';
+    }
+}
+  @keyframes message{
+    0%{
+        content: 'lo itu aktraktif banget sii';
+    }30%{
+        content: 'i have crush on you';
+    }60%{
+        content: 'emang boleh se ganteng itu';
+    }80%{
+        content: 'kapan kita main kaya dulu lagi';
+    }100%{
+        content: 'lo itu aktraktif banget sii';
+    }
+}
+  @keyframes to{
+    0%{
+        content: 'To : @d.dheepy';
+    }30%{
+        content: 'To : @rndlgi';
+    }60%{
+        content: 'To : @mhmmd_fhmi';
+    }80%{
+        content: 'To : @gding';
+    }100%{
+        content: 'To : @d.dheepy';
+    }
+}
