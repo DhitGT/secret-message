@@ -1,0 +1,42 @@
+input {
+    background-color: #fdfdfd;
+    border-radius: 12px;
+    
+}
+
+textarea{
+    border-radius: 12p;
+}
+
+body {
+    
+    background-size: cover;
+    font-size: 17px;
+    font-weight: 100%;
+    color: rgb(0, 0, 0);
+       
+}
+.table-out{
+    background-color: #fdfdfd;
+    border: 2px solid black;
+}
+table{
+    border: 2px rgb(0, 0, 0) solid;
+    border-radius: 12px;
+    box-shadow: 2px 2px 2px 2px rgb(255, 255, 255);
+}
+
+option {
+    background-color: #FF7F50;
+}
+.button {
+   
+    background-color: skyblue;
+    border-radius: 10px;
+    width: 100%;
+    height: 50px;
+}
+.button:hover {
+   
+    background-color: rgb(35, 19, 180);
+}

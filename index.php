@@ -27,7 +27,7 @@
                     <a onclick="scrollToSection('ngl')">Ngl</a>
                 </li>
                 <li>
-                    <a href="">Login</a>
+                    <a href="login.php">Login</a>
                 </li>
             </ul>
         </nav>
