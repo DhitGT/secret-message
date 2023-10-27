@@ -37,7 +37,7 @@
                     <a href="../ngl/index.php">Ngl</a>
                 </li>
                 <li>
-                    <a href="">Login</a>
+                    <a href="../login.php">Login</a>
                 </li>
             </ul>
         </nav>
