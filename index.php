@@ -13,7 +13,7 @@
     <header>
         <nav>
             <div class="logo">
-                <h3>Message</h3>
+                <h3>MedFess</h3>
 
             </div>
             <ul>
@@ -24,7 +24,12 @@
                     <a onclick="scrollToSection('menfess')">Menfess</a>
                 </li>
                 <li>
-                    <a onclick="scrollToSection('ngl')">Ngl</a>
+                    <select name="tambah" id="tambah" class="dropdown">
+                        <a href="menfess/tambah.php">
+                            <option value="Tambah Menfess" class="dropdown-item">
+                        </a>
+                        </option>
+                    </select>
                 </li>
                 <li>
                     <a href="login.php">Login</a>
@@ -35,7 +40,7 @@
     <div class="container">
         <section id="bodys">
             <div class="body-1">
-                <p class="brand">Message</p>
+                <p class="brand">MedFess</p>
                 <div class="badge">
                     <div class="badge-item">ANONYMOUS</div>
                     <div class="badge-item">MESSAGE</div>
@@ -53,7 +58,7 @@
                 </div>
             </div>
             <div class="body-2">
-        
+
                 <div class="bg-img"></div>
             </div>
         </section>
@@ -110,61 +115,99 @@
     <section id="ngl">
         <div class="container">
             <div class="ngl-wrapper">
-                <div class="ngl-top">
-                    <h1>Not Gonna Lie</h1>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam, numquam! Eaque officiis, inventore iste, enim cupiditate aut blanditiis fugiat ratione amet omnis voluptatum autem maiores, eius aperiam quaerat! Voluptates natus sit eius! Fuga, officia?</p>
-                </div>
+
                 <div class="ngl-bottom">
-                    <h4 align="center">Ngl Theme</h4>
+                    <h4 align="center">Trending Menfess</h4>
                     <p align="center">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio adipisci veritatis, ex tempora esse iste sequi voluptatum numquam magnam in?</p>
                     <div class="ngl-theme">
-                        <div class="theme-item">
-                            <div class="theme-top">
-                                <h5>Kirimi aku pesan anonim</h5>
-                                <hr>
+                        <div class="menfess-example theme-item">
+                            <div>
+                                <div class="exam-head">
+                                    <b>
+                                        <p class="to"></p>
+                                    </b>
+                                    <hr>
+                                </div>
+                                <div class="exam-body">
+                                    <span class="message">
+
+                                    </span>
+                                    <b>
+                                        <p class="from"></p>
+                                    </b>
+                                    <hr>
+                                </div>
                             </div>
-                            <div class="theme-bottom">
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum amet mollitia animi. Facere commodi aliquid iusto molestias dolor! Voluptates incidunt dolores </p>
+                            <div class="exam-bottom">
+                                <div class="icon">
+                                    like
+                                </div>
+                                <div class="icon">
+                                    comment
+                                </div>
                             </div>
-                            <a href="" class="btn btn-primary mt-auto">Buat Sekarang</a>
                         </div>
-                        <div class="theme-item">
-                            <div class="theme-top">
-                                <h5>Confession</h5>
-                                <hr>
+                        <div class="menfess-example theme-item">
+                            <div>
+                                <div class="exam-head">
+                                    <b>
+                                        <p class="to"></p>
+                                    </b>
+                                    <hr>
+                                </div>
+                                <div class="exam-body">
+                                    <span class="message">
+
+                                    </span>
+                                    <b>
+                                        <p class="from"></p>
+                                    </b>
+                                    <hr>
+                                </div>
                             </div>
-                            <div class="theme-bottom">
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum amet mollitia animi. Facere commodi aliquid iusto molestias dolor! Voluptates incidunt dolores id, sapiente fuga atque labore provident nobis est nam.</p>
+                            <div class="exam-bottom">
+                                <div class="icon">
+                                    like
+                                </div>
+                                <div class="icon">
+                                    comment
+                                </div>
                             </div>
-                            <a href="" class="btn btn-primary mt-auto">Buat Sekarang</a>
                         </div>
-                        <div class="theme-item">
-                            <div class="theme-top">
-                                <h5>3 Fact About Me</h5>
-                                <hr>
+                        <div class="menfess-example theme-item">
+                            <div>
+                                <div class="exam-head">
+                                    <b>
+                                        <p class="to"></p>
+                                    </b>
+                                    <hr>
+                                </div>
+                                <div class="exam-body">
+                                    <span class="message">
+
+                                    </span>
+                                    <b>
+                                        <p class="from"></p>
+                                    </b>
+                                    <hr>
+                                </div>
                             </div>
-                            <div class="theme-bottom">
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum amet mollitia animi. Facere commodi aliquid iusto molestias dolor! Voluptates incidunt dolores id, sapiente fuga atque labore provident nobis est nam.</p>
+                            <div class="exam-bottom">
+                                <div class="icon">
+                                    like
+                                </div>
+                                <div class="icon">
+                                    comment
+                                </div>
                             </div>
-                            <a href="" class="btn btn-primary mt-auto">Buat Sekarang</a>
-                        </div>
-                        <div class="theme-item">
-                            <div class="theme-top">
-                                <h5>Your crush</h5>
-                                <hr>
-                            </div>
-                            <div class="theme-bottom">
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum amet mollitia animi. Facere commodi aliquid iusto molestias dolor! Voluptates incidunt dolores id, sapiente fuga atque labore provident nobis est nam.</p>
-                            </div>
-                            <a href="" class="btn btn-primary mt-auto">Buat Sekarang</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <?php include '../footer.php' ?>
-    
+    <?php include 'footer.php' ?>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script>
         // JavaScript function to scroll to a section with an offset
