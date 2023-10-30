@@ -1,3 +1,15 @@
+<?php 
+
+    require_once '../koneksi.php';  
+    $idUser = 1;
+    $sql = "SELECT roommenfess.id, roommenfess.nama, menfess.ke, menfess.dari, menfess.isi,menfess.likes FROM menfess INNER JOIN following INNER JOIN roommenfess ON menfess.idRoom = following.idRoom WHERE menfess.idUser = following.idUser AND roommenfess.id = menfess.idRoom AND menfess.idUser = '$idUser'";
+    $result = mysqli_query($conn,$sql);
+
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,96 +23,39 @@
 </head>
 
 <body>
-<header>
-        <nav class="nav-menfess">
-            <div class="logo">
-                <h3>MedFess</h3>
-
-            </div>
-            <ul>
-                <li>
-                    <form method="post" class="d-flex ">
-                        <input class="form-control" type="text" name="search" placeholder="Cari chanel menfess disini">
-                        <button class="btn btn-outline-info ms-2">Cari</button>
-                    </form>
-                </li>
-                <li>
-                    <a href="../menfess/index.php">Home</a>
-                </li>
-                <li>
-                    <a href="explore.php">Explore</a>
-                </li>
-                <li>
-                    <a href="following.php">Following</a>
-                </li>
-                <li>
-                    <a href="../ngl/index.php">Ngl</a>
-                </li>
-                <li>
-                    <a href="../login.php">Login</a>
-                </li>
-            </ul>
-        </nav>
-    </header>
+    <?php include '../layout/headerMenfess.php' ?>
 
     <section id="body" class="body-menfess">
         <div class="container">
+            <div class="card mb-5">
+                <form method="post" class="d-flex ">
+                    <input class="form-control" type="text" name="search" placeholder="Cari chanel menfess disini">
+                    <button class="btn btn-outline-info ms-2">Cari</button>
+                </form>
+            </div>
             <div class="wrapper-menfess">
-                <div class="menfess-item">
-                    <div class="menfess-chanel">
-                        <p>Chanel : <a href="room.php?id=1">Butun Fess</a></p>
-                    </div>
-                    <div class="menfess-bg">
-                        <div class="menfess-head">
-                            <p>From : <span>No One</span></p>
-                            <p>To : <a href="">@d.dheepy</a></p>
+                <?php foreach($result as $res): ?>
+                    <div class="menfess-item">
+                        <div class="menfess-chanel">
+                            <p>Chanel : <a href="room.php?id=<?php echo $res['id'] ?>"><?php echo $res['nama'] ?></a></p>
                         </div>
-                        <div class="menfess-body">
-                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quaerat dignissimos fuga non vero perferendis corrupti dolorum odit unde? Modi ut beatae vitae officia et dolorem, cum dignissimos, facere, aperiam aliquam id mollitia necessitatibus voluptatum!</p>
-                        </div>
-                        <div class="menfess-bottom d-flex g-3">
-                            <p class="me-3">like</p>
-                            <p>comment</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="menfess-item">
-                    <div class="menfess-chanel">
-                        <p>Chanel : <a href="">Butun Fess</a></p>
-                    </div>
-                    <div class="menfess-bg">
-                        <div class="menfess-head">
-                            <p>From : <span>No One</span></p>
-                            <p>To : <a href="">@d.dheepy</a></p>
-                        </div>
-                        <div class="menfess-body">
-                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quaerat dignissimos fuga non vero perferendis corrupti dolorum odit unde? Modi ut beatae vitae officia et dolorem, cum dignissimos, facere, aperiam aliquam id mollitia necessitatibus voluptatum!</p>
-                        </div>
-                        <div class="menfess-bottom d-flex g-3">
-                            <p class="me-3">like</p>
-                            <p>comment</p>
+                        <div class="menfess-bg">
+                            <div class="menfess-head">
+                                <p>From : <span><?php echo $res['dari'] ?></span></p>
+                                <p>To : <a href=""><?php echo $res['ke'] ?></a></p>
+                            </div>
+                            <div class="menfess-body">
+                                <p><?php echo $res['isi'] ?></p>
+                            </div>
+                            <div class="menfess-bottom d-flex g-3 flex-column">
+                                <?php include '../layout/likes.php' ?>
+                                <p><?php echo $res['likes'] ?> Likes</p>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="menfess-item">
-                    <div class="menfess-chanel">
-                        <p>Chanel : <a href="">Rpl 3 Fess</a></p>
-                    </div>
-                    <div class="menfess-bg">
-                        <div class="menfess-head">
-                            <p>From : <span>No One</span></p>
-                            <p>To : <a href="">@d.dheepy</a></p>
-                        </div>
-                        <div class="menfess-body">
-                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quaerat dignissimos fuga non vero perferendis corrupti dolorum odit unde? Modi ut beatae vitae officia et dolorem, cum dignissimos, facere, aperiam aliquam id mollitia necessitatibus voluptatum!</p>
-                        </div>
-                        <div class="menfess-bottom d-flex g-3">
-                            <p class="me-3">like</p>
-                            <p>comment</p>
-                        </div>
-                    </div>
-                </div>
-                <a href="explore.php" class="btn btn-info w-100" >Explore More Channel</a>
+                <?php endforeach ?>
+                
+                <a href="explore.php" class="btn btn-info w-100">Explore More Channel</a>
             </div>
         </div>
     </section>
