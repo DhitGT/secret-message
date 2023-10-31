@@ -12,61 +12,42 @@ if(isset($_SESSION['infoRegis'])){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="desain_login.css">
     <title>Register Berita</title>
 </head>
 <body>
-    <div class="register">
+    <div class="wrapper">
 
-    <h1 align="center">Registrasi</h1>
-    <form method="post" action="proses_registrasi.php">
-    <table align="center">
-    <tr>
-        <td>
-        <td>
-            <label for="nama">Nama:</label>
-            <input type="text" name="nama" required><br>
-        </td>
-        </td>
-    </tr>
+        
+        <form method="post" action="proses_registrasi.php">
+            <h1 >Registrasi</h1>
+            <div class="input-box">
+                <input type="text" name="nama" placeholder="Nama" 
+                required>
+                <i class='bx bxs-user'></i>
+            </div>
+            
+            <div class="input-box">
+                <input type="text" name="email" placeholder="Email" 
+                required>
+                <i class='bx bxs-user'></i>
+            </div>
+        
+            <div class="input-box">
+                <input type="password" name="password" placeholder="Password" 
+                required>
+                <i class='bx bxs-user'></i>
+            </div>
 
-    <tr>
-        <td>
-        <td>
-        <label for="email">Email:</label>
-        <input type="text" name="email" required><br>
-        </td>
-        </td>
-    </tr>
+            <div class="input-box">
+                <input type="password" name="password" placeholder="Ulangi Password" 
+                required>
+                <i class='bx bxs-user'></i>
+            </div>
 
-    <tr>
-        <td>
-        <td>
-        <label for="password">Password:</label>
-        <input type="password" name="password" required><br>
-        </td>
-        </td>
-    </tr>
-
-    <tr>
-        <td>
-        <td>
-        <label for="ulangi_password">Ulangi Password:</label>
-        <input type="password" name="ulangi_password" required><br>
-        </td>
-        </td>
-    </tr>
-
-    <tr>
-        <td>
-        <td>
-        <input type="submit" value="Daftar">
-        </td>
-        </td>
-    </tr>
-    </table>
-    </form>
-
+            <button type="submit" value="Daftar" class="btn">Register</button>
+            
+    
     </div>
 </body>
 </html>
