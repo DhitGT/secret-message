@@ -7,6 +7,7 @@
     <title>Message</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic.min.css" integrity="sha512-LeCmts7kEi09nKc+DwGJqDV+dNQi/W8/qb0oUSsBLzTYiBwxj0KBlAow2//jV7jwEHwSCPShRN2+IWwWcn1x7Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
@@ -21,16 +22,9 @@
                     <a onclick="scrollToSection('bodys')">About</a>
                 </li>
                 <li>
-                    <a onclick="scrollToSection('menfess')">Menfess</a>
+                    <a href="menfess/index.php">Menfess</a>
                 </li>
-                <li>
-                    <select name="tambah" id="tambah" class="dropdown">
-                        <a href="menfess/tambah.php">
-                            <option value="Tambah Menfess" class="dropdown-item">
-                        </a>
-                        </option>
-                    </select>
-                </li>
+                
                 <li>
                     <a href="login.php">Login</a>
                 </li>
@@ -66,45 +60,25 @@
     </div>
     <section id="menfess">
         <div class="container">
+            <div class="card card-menfess bo-0">
+                <h2>Menfess Chanel</h2>
+            </div>
             <div class="card card-menfess">
                 <div class="menfess-left">
                     <div class="menfess-example">
-                        <div>
-                            <div class="exam-head">
-                                <b>
-                                    <p class="to"></p>
-                                </b>
-                                <hr>
-                            </div>
-                            <div class="exam-body">
-                                <span class="message">
 
-                                </span>
-                                <b>
-                                    <p class="from"></p>
-                                </b>
-                                <hr>
-                            </div>
-                        </div>
-                        <div class="exam-bottom">
-                            <div class="icon">
-                                like
-                            </div>
-                            <div class="icon">
-                                comment
-                            </div>
-                        </div>
                     </div>
                 </div>
                 <div class="menfess-right">
                     <div class="menfess-right-info">
-                        <h2>Menfess</h2>
+                        <h2>Judul Chanel</h2>
                         <hr>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet expedita a modi ad ea obcaecati sunt nostrum adipisci assumenda quis voluptas debitis praesentium eum autem, quam quos corporis dicta, cupiditate veniam placeat explicabo deleniti odit, est laborum? Rem, labore vel. Animi error quibusdam tenetur omnis?</p>
+
                     </div>
-                    <div class="action">
-                        <div class="action-item">
-                            <a href="menfess/index.php" class="btn btn-info">Lihat Lebih Banyak Menfess</a>
+                    <div class="action d-flex ">
+                        <div class="action-item me-2">
+                            <a href="menfess/index.php" class="btn btn-info ps-5 pe-5">Follow</a>
                         </div>
                     </div>
                 </div>
@@ -138,13 +112,9 @@
                                     <hr>
                                 </div>
                             </div>
-                            <div class="exam-bottom">
-                                <div class="icon">
-                                    like
-                                </div>
-                                <div class="icon">
-                                    comment
-                                </div>
+                            <div class="exam-bottom flex-column">
+                            <?php include 'layout/likes.php' ?>
+                                <p>20k Likes</p>
                             </div>
                         </div>
                         <div class="menfess-example theme-item">
@@ -165,13 +135,9 @@
                                     <hr>
                                 </div>
                             </div>
-                            <div class="exam-bottom">
-                                <div class="icon">
-                                    like
-                                </div>
-                                <div class="icon">
-                                    comment
-                                </div>
+                            <div class="exam-bottom flex-column">
+                                <?php include 'layout/likes.php' ?>
+                                <p>20k Likes</p>
                             </div>
                         </div>
                         <div class="menfess-example theme-item">
@@ -192,15 +158,12 @@
                                     <hr>
                                 </div>
                             </div>
-                            <div class="exam-bottom">
-                                <div class="icon">
-                                    like
-                                </div>
-                                <div class="icon">
-                                    comment
-                                </div>
+                            <div class="exam-bottom flex-column">
+                            <?php include 'layout/likes.php' ?>
+                                <p>20k Likes</p>
                             </div>
                         </div>
+                        
                     </div>
                 </div>
             </div>

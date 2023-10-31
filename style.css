@@ -28,7 +28,7 @@ nav{
 }
 
 .nav-menfess ul{
-    width: 70%;
+    width: 30%;
 }
 
 nav ul{
@@ -207,7 +207,6 @@ justify-content: center;
 
 .exam-bottom{
     display: flex;
-    gap: 2em;
 }
 
 .menfess-right-info{
@@ -291,38 +290,51 @@ footer{
     padding: 3em;
     display: flex;
     flex-wrap: wrap;
-    justify-content: start;
+    justify-content: flex-start;
+    align-items: flex-start;
     gap: 2em;
 }
 
 .room-item{
-    max-width: 30rem;   
-    max-height: 10rem;
+    max-width: 47%;   
+    max-height: 9rem;
     color: #131E28;
     border-radius: 0.5em;
     padding: 0.3em;
     display: flex;
+
     justify-content: space-between;
+    margin-right:auto;
 }
 
 .room-left{
-    width: 40%;
+    width: 20%;
     overflow: hidden;
     border-radius:0.3em ;
+    display: flex;
+    align-items: center;
 }
 
 .room-right{
     
-    width: 60%;
+    width: 90%;
     padding: 1em;
     padding-top: 1em;
-
     overflow: hidden;
     border-radius: 0em 0em 0.3em 0.3em ;
 }
 
+.room-right .desc{
+    height: 2em;
+    overflow: hidden;
+}
+
 .room-left img{
     width: 100%;
+    margin: auto;
+    border-radius: 20rem;
+    aspect-ratio: 1/1;
+    border: 3px solid #0F161C;
 }
 
 .room-right h4{
@@ -339,17 +351,27 @@ footer{
     margin-top: 10rem;
 }
 
-.wrapper-menfess{
+.wrapper-menfess {
     display: flex;
     flex-wrap: wrap;
-    justify-content: start;
+    justify-content: flex-start; /* Mengubah justify-content menjadi flex-start */
+    align-items: flex-start;
     gap: 5em;
 }
 
-.menfess-item{
-    max-width: 30rem;
+.menfess-item {
+    width: 46%;
+    min-height: 300px;
     box-shadow: 4px 4px 4px 5px rgba(0, 0, 0, 0.493);
+    margin-right: auto; /* Menambahkan margin-left: auto pada semua item */
 }
+
+.menfess-body{
+    overflow-y: scroll;
+    height: 120px;
+
+}
+
 
 .menfess-chanel{
     background-color: #0f161c82;
@@ -361,8 +383,37 @@ footer{
     padding: 1em;
 }
 
+/* ====================TambahFess */
 
+.sheet{
+    margin: auto;
+    width: 90%;
+    min-height: 10rem;
+    background-color: #131E28;
+    padding: 1rem 3em;
+}
 
+.bo-none{
+    border:none;
+}
+
+.in-sheet{
+    margin: 0;
+    color: #c8d4e0;
+
+}
+.in-sheet:focus{
+    margin: 0;
+    color: #c8d4e0;
+}
+.t-black{
+    color: #0F161C;
+}
+
+/*======================================*/
+.card-dark{
+    background-color: #0f161c;
+}
 
 
 
@@ -410,18 +461,7 @@ footer{
     animation: gradient-animation 3s ease infinite;
   }
 
-  .to::before{
-    content: '';
-    animation: to infinite 15s ease-in-out;
-  }
-  .message::before{
-    content: '';
-    animation: message infinite 15s ease-in-out;
-  }
-  .from::before{
-    content: '';
-    animation: from infinite 15s ease-in-out;
-  }
+
   
   @keyframes gradient-animation {
     0% {
@@ -435,42 +475,25 @@ footer{
     }
   }
 
-  @keyframes from{
-    0%{
-        content: 'From : No One';
-    }30%{
-        content: 'From : Your Crush';
-    }60%{
-        content: 'From : Manusia';
-    }80%{
-        content: 'From : Secret';
-    }100%{
-        content: 'From : No One';
-    }
+ 
+
+.color-sec{
+    color: #e0e4e7;
 }
-  @keyframes message{
-    0%{
-        content: 'lo itu aktraktif banget sii';
-    }30%{
-        content: 'i have crush on you';
-    }60%{
-        content: 'emang boleh se ganteng itu';
-    }80%{
-        content: 'kapan kita main kaya dulu lagi';
-    }100%{
-        content: 'lo itu aktraktif banget sii';
-    }
+
+.bg-2{
+    background-color: #0f161c;
 }
-  @keyframes to{
-    0%{
-        content: 'To : @d.dheepy';
-    }30%{
-        content: 'To : @rndlgi';
-    }60%{
-        content: 'To : @mhmmd_fhmi';
-    }80%{
-        content: 'To : @gding';
-    }100%{
-        content: 'To : @d.dheepy';
-    }
+
+.bo-0{
+    border: none;
+}
+
+.icon-group{
+    
+}
+
+.ico img{
+    width: 30px;
+
 }

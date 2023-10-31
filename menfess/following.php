@@ -1,3 +1,12 @@
+<?php 
+
+    require_once '../koneksi.php';
+    $sql = "SELECT * FROM roommenfess INNER JOIN following ON following.idRoom = roommenfess.id WHERE following.idUser = 1";
+    $result = mysqli_query($conn,$sql);
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,58 +20,31 @@
 </head>
 
 <body>
-    <header>
-        <nav class="nav-menfess">
-            <div class="logo">
-                <h3>Menfess</h3>
-
-            </div>
-            <ul>
-                <li>
-                    <form method="post" class="d-flex ">
-                        <input class="form-control" type="text" name="search" placeholder="Cari chanel menfess disini">
-                        <button class="btn btn-outline-info ms-2">Cari</button>
-                    </form>
-                </li>
-                <li>
-                    <a href="../menfess/index.php">Home</a>
-                </li>
-                <li>
-                    <a href="explore.php">Explore</a>
-                </li>
-                <li>
-                    <a href="following.php">Following</a>
-                </li>
-                <li>
-                    <a href="../ngl/index.php">Ngl</a>
-                </li>
-                <li>
-                    <a href="">Login</a>
-                </li>
-            </ul>
-        </nav>
-    </header>
+<?php include '../layout/headerMenfess.php' ?>
 
     <section id="explore">
     <div class="container pt-5">
             <h1 align="center">Following</h1>
             <div class="wrapper-room">
-                <div class="room-item gradient-card">
-                    <div class="room-left">
-                        <img src="https://placehold.co/400" alt="" >
-                    </div>
-                    <div class="room-right">
-                        <b>
-                            <h4>Rpl 3 Hits banget bang</h4>
-                        </b>
-                        <p>Followers : <span>234</span></p>
-                        <p>Menfess : <span>109</span></p>
-                        <div class="room-combine d-flex mt-2">
-                            <a href="room.php?id=1" class="btn btn-danger w-100">Lihat</a>
+                <?php foreach($result as $res): ?>
+                    <div class="room-item gradient-card">
+                        <div class="room-left">
+                            <img src="../media/img/<?php echo $res['foto'] ?>" alt="<?php echo $res['foto'] ?>" >
+                        </div>
+                        <div class="room-right">
+                            <div>
+                                <b>
+                                    <h4><?php echo $res['nama'] ?></h4>
+                                </b>
+                                <p style="margin-top:-4% ;" class="desc"><?php echo $res['descript'] ?></p>
+                                <p>Followers : <span><?php echo $res['followers'] ?></span></p>
+                            </div>
+                            <div class="room-combine d-flex mt-2">
+                                <a href="" class="btn btn-danger w-100">Follow</a>
+                            </div>
                         </div>
                     </div>
-                </div>
-               
+                <?php endforeach ?>
                 
             </div>
         </div>
