@@ -1,8 +1,14 @@
 <?php 
-
+session_start();
     require_once '../koneksi.php';
-    $sql = "SELECT * FROM roommenfess INNER JOIN following ON following.idRoom = roommenfess.id WHERE following.idUser = 1";
+    require "../function.php";
+    isLogin("../login.php");
+
+    $userMail = $_SESSION['login'];
+    $userId = getUserId($conn,$userMail);
+    $sql = "SELECT * FROM roommenfess INNER JOIN following ON following.idRoom = roommenfess.id WHERE following.idUser = '$userId'";
     $result = mysqli_query($conn,$sql);
+
 
 ?>
 
@@ -40,7 +46,7 @@
                                 <p>Followers : <span><?php echo $res['followers'] ?></span></p>
                             </div>
                             <div class="room-combine d-flex mt-2">
-                                <a href="" class="btn btn-danger w-100">Follow</a>
+                            <a href="room.php?id=<?php echo $res['id'] ?>" class="btn btn-success w-100">Lihat</a>
                             </div>
                         </div>
                     </div>

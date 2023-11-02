@@ -1,21 +1,25 @@
 <?php
-
+session_start();
 require '../koneksi.php';
 require '../function.php';
-$following = getFollowing($conn, 1);
-$idUser = 1;
+isLogin("../login.php");
 
-if(isset($_POST['submit'])){
+$userMail = $_SESSION['login'];
+$userId = getUserId($conn, $userMail);
+$following = getFollowing($conn, $userId);
+
+if (isset($_POST['submit'])) {
     $chanel = $_POST['chanel'];
     $to = $_POST['to'];
     $message = $_POST['message'];
     $from = $_POST['from'];
 
-    $sql = "INSERT INTO `menfess` (`id`, `idUser`, `idRoom`, `dari`, `ke`, `isi`, `likes`, `tanggal`) VALUES ('', '$idUser', '$chanel', '$from', '$$to', '$message', '0', current_timestamp())";
-    if(mysqli_query($conn,$sql)){
+    $sql = "INSERT INTO `menfess` (`id`, `idUser`, `idRoom`, `dari`, `ke`, `isi`, `likes`, `tanggal`) VALUES ('', '$userId', '$chanel', '$from', '$to', '$message', '0', current_timestamp())";
+    if (mysqli_query($conn, $sql)) {
         header("location:index.php");
     }
 }
+
 
 ?>
 
@@ -39,21 +43,21 @@ if(isset($_POST['submit'])){
         <div class="container">
             <div class="card card-dark p-5">
                 <h4 align="center">Menfess Seseorang</h4>
-                <form action="" class="mt-2" method="post" class="form" >
+                <form action="" class="mt-2" method="post" class="form">
 
                     <div class="sheet">
                         <label for="chanel">Select Chanel</label>
                         <br>
                         <div class="chanel">
-                            <select class="form-select bg-transparent bo-2 in-sheet" aria-label="chanel" name="chanel" required >
-                                <?php foreach($following as $follow): ?>
-                                <option name="chanel" value="<?php echo $follow['roomid'] ?>" class="t-black">
-                                    <div class="d-flex">
-                                        <?php echo $follow['nama'] ?>
-                                        <span> - </span>
-                                        <?php echo $follow['descript'] ?>
-                                    </div>    
-                                </option>
+                            <select class="form-select bg-transparent bo-2 in-sheet" aria-label="chanel" name="chanel" required>
+                                <?php foreach ($following as $follow) : ?>
+                                    <option name="chanel" value="<?php echo $follow['roomid'] ?>" class="t-black">
+                                        <div class="d-flex">
+                                            <?php echo $follow['nama'] ?>
+                                            <span> - </span>
+                                            <?php echo $follow['descript'] ?>
+                                        </div>
+                                    </option>
                                 <?php endforeach ?>
 
                             </select>
