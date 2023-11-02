@@ -1,20 +1,8 @@
 <?php
 session_start();
 require 'koneksi.php';
-if(isset($_SESSION['infoLogin'])){
-    $info = $_SESSION['infoLogin'];
-    echo "<script>alert('$info')</script>";
-  }
-
-if( isset($_POST["submit"]) ) {
-    $nama = $_POST['nama'];
-    $password = $_POST['password'];
-    $sql = "INSERT INTO `users` (`id`, `nama`, `password`, `role`, `createdAt`) VALUES (NULL, '$nama', '$password', 'user', current_timestamp())";
-    if(mysqli_query($conn,$sql)){
-        header("<location:>
-        <menfess>index.php");
-    }
-}
+$infomail = isset($_GET['infoemail']) ? $_GET['infoemail'] : ' ';
+$infoPw = isset($_GET['infopw']) ? $_GET['infopw'] : ' ';
 
 
 ?>
@@ -31,9 +19,10 @@ if( isset($_POST["submit"]) ) {
     <div class="wrapper">
         <form method="post" action="proses_login.php">
             <h1>Login</h1>
+            <label for="email" class="info"><?php echo $infomail ?></label>
             <div class="input-box">
-                <input type="text" name="email" placeholder="Email" 
-                required>
+                <input type="email" name="email" placeholder="Email" 
+                required value="<?php echo isset($_GET['email']) ? $_GET['email'] : ''  ?>">
                 <i class='bx bxs-user'></i>
             </div>
             <div class="input-box">
@@ -50,7 +39,7 @@ if( isset($_POST["submit"]) ) {
 
             <div class="register-link">
                 <p>Don't have an account? <a 
-                href="proses_registrasi.php">Register</a></p>
+                href="register.php">Register</a></p>
             </div>
         </form>
 

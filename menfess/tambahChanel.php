@@ -34,7 +34,7 @@
 <body>
 <?php include '../layout/headerMenfess.php' ?>
 
-    <section id="addChanel">
+    <section id="addChanel" class="mt-5">
         <div class="container">
             <div class="card card-dark p-5">
                 <h4 align="center" >Buat Chanel Menfess</h4>

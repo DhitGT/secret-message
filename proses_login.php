@@ -7,12 +7,17 @@ $password = $_POST['password'];
 
 $sql = "SELECT * FROM users WHERE email = '$email' AND password='$password'";
 $result = mysqli_query($conn, $sql);
+$iduser = mysqli_fetch_assoc($result)['id'];
+$info = '';
+$throwData = "&email=$email";
 
 if (mysqli_num_rows($result) > 0) {
-		header("Location: index.php");
+		header("Location: menfess/index.php");
+      $_SESSION['login'] = $email;
+      $_SESSION['loginid'] = $iduser;
 } else{
-	$_SESSION["infoLogin"] = "pasword atau email salah";
-   header("location:login.php");
+	$info = "pasword atau email salah";
+   header("location:login.php?infoemail=$info $throwData");
    }
 
 mysqli_close($conn);
