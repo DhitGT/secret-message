@@ -8,15 +8,15 @@ $userMail = $_SESSION['login'];
 $userId = getUserId($conn, $userMail);
 $following = getFollowing($conn, $userId);
 
-$sql = "SELECT roommenfess.id, roommenfess.nama, menfess.ke, menfess.dari, menfess.isi,menfess.likes FROM menfess INNER JOIN following INNER JOIN roommenfess ON roommenfess.id = following.idRoom WHERE following.idUser = '$userId' ";
+$sql = "SELECT roommenfess.id, roommenfess.nama, menfess.ke, menfess.dari, menfess.isi,menfess.likes FROM menfess INNER JOIN following INNER JOIN roommenfess ON following.idRoom = roommenfess.id AND menfess.idRoom = roommenfess.id WHERE following.idUser = '$userId' ";
 $result = mysqli_query($conn, $sql);
 
 if (isset($_POST['submit'])) {  
     $selectedValue = $_POST['chanel'];
     if($selectedValue != '*'){
-        $sqlId = "SELECT roommenfess.id, roommenfess.nama, menfess.ke, menfess.dari, menfess.isi,menfess.likes FROM menfess INNER JOIN following INNER JOIN roommenfess ON roommenfess.id = following.idRoom WHERE following.idUser = '$userId' AND roommenfess.id = '$selectedValue'";
+        $sqlId = "SELECT roommenfess.id, roommenfess.nama, menfess.ke, menfess.dari, menfess.isi,menfess.likes FROM menfess INNER JOIN following INNER JOIN roommenfess ON following.idRoom = roommenfess.id AND menfess.idRoom = roommenfess.id WHERE following.idUser = '$userId'  AND roommenfess.id = '$selectedValue'";
     }else{
-        $sqlId = "SELECT roommenfess.id, roommenfess.nama, menfess.ke, menfess.dari, menfess.isi,menfess.likes FROM menfess INNER JOIN following INNER JOIN roommenfess ON roommenfess.id = following.idRoom WHERE following.idUser = '$userId' ";
+        $sqlId = "SELECT roommenfess.id, roommenfess.nama, menfess.ke, menfess.dari, menfess.isi,menfess.likes FROM menfess INNER JOIN following INNER JOIN roommenfess ON following.idRoom = roommenfess.id AND menfess.idRoom = roommenfess.id WHERE following.idUser = '$userId'  ";
     }
     $result = mysqli_query($conn, $sqlId);
 }

@@ -52,11 +52,9 @@ if (isset($_POST['submit'])) {
                             <select class="form-select bg-transparent bo-2 in-sheet" aria-label="chanel" name="chanel" required>
                                 <?php foreach ($following as $follow) : ?>
                                     <option name="chanel" value="<?php echo $follow['roomid'] ?>" class="t-black">
-                                        <div class="d-flex">
                                             <?php echo $follow['nama'] ?>
                                             <span> - </span>
                                             <?php echo $follow['descript'] ?>
-                                        </div>
                                     </option>
                                 <?php endforeach ?>
 
