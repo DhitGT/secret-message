@@ -1,19 +1,24 @@
-<?php 
-    require_once '../koneksi.php';
-    $idUser = 1 ;
-    if(isset($_POST['submit'])){
-        $nama = $_POST['nama'];
-        $desc = $_POST['desc'];
-        $gambar = $_FILES["gambar"]["name"];
-        $targetDir = "../media/img/";
-        $targetFile = $targetDir . basename($_FILES["gambar"]["name"]);
-        if (move_uploaded_file($_FILES["gambar"]["tmp_name"], $targetFile)) {
-            $sql = "INSERT INTO `roommenfess` (`id`, `idUser`,`nama`, `followers`, `totalMenfess`, `descript`, `foto`) VALUES ('', '$idUser','$nama' ,'0', '0', '$desc', '$gambar')";
-            if(mysqli_query($conn,$sql)){
-                header("location:index.php");
-            }
+<?php
+session_start();
+require '../koneksi.php';
+require '../function.php';
+isLogin("../login.php");
+
+$userMail = $_SESSION['login'];
+$idUser = getUserId($conn, $userMail);
+if (isset($_POST['submit'])) {
+    $nama = $_POST['nama'];
+    $desc = $_POST['desc'];
+    $gambar = $_FILES["gambar"]["name"];
+    $targetDir = "../media/img/";
+    $targetFile = $targetDir . basename($_FILES["gambar"]["name"]);
+    if (move_uploaded_file($_FILES["gambar"]["tmp_name"], $targetFile)) {
+        $sql = "INSERT INTO `roommenfess` (`id`, `idUser`,`nama`, `followers`, `totalMenfess`, `descript`, `foto`) VALUES ('', '$idUser','$nama' ,'0', '0', '$desc', '$gambar')";
+        if (mysqli_query($conn, $sql)) {
+            header("location:index.php");
         }
     }
+}
 
 
 ?>
@@ -32,12 +37,12 @@
 </head>
 
 <body>
-<?php include '../layout/headerMenfess.php' ?>
+    <?php include '../layout/headerMenfess.php' ?>
 
     <section id="addChanel" class="mt-5">
         <div class="container">
             <div class="card card-dark p-5">
-                <h4 align="center" >Buat Chanel Menfess</h4>
+                <h4 align="center">Buat Chanel Menfess</h4>
                 <form action="" class="mt-2" method="post" class="form" enctype="multipart/form-data">
                     <table class="m-auto ">
                         <tr>
@@ -85,9 +90,9 @@
                             </td>
                             <td></td>
                             <td>
-                                </td>
-                            </tr>
-                        </table>
+                            </td>
+                        </tr>
+                    </table>
                 </form>
             </div>
         </div>

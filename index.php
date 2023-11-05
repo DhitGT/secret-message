@@ -11,10 +11,10 @@
 </head>
 
 <body>
-    <header>
+    <header style="margin-bottom: 10%;">
         <nav>
-            <div class="logo">
-                <h3>MedFess</h3>
+            <div class="logo" >
+                <img style="margin-bottom:-5%; padding-top:-2%; width:15%;" src="media/icon/logo.jpg" alt="">
 
             </div>
             <ul>
@@ -24,7 +24,7 @@
                 <li>
                     <a href="menfess/index.php">Menfess</a>
                 </li>
-                
+
                 <li>
                     <a href="login.php">Login</a>
                 </li>
@@ -113,7 +113,7 @@
                                 </div>
                             </div>
                             <div class="exam-bottom flex-column">
-                            <?php include 'layout/likes.php' ?>
+                                <?php include 'layout/likes.php' ?>
                                 <p>20k Likes</p>
                             </div>
                         </div>
@@ -159,11 +159,11 @@
                                 </div>
                             </div>
                             <div class="exam-bottom flex-column">
-                            <?php include 'layout/likes.php' ?>
+                                <?php include 'layout/likes.php' ?>
                                 <p>20k Likes</p>
                             </div>
                         </div>
-                        
+
                     </div>
                 </div>
             </div>

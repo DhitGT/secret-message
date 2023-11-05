@@ -459,6 +459,61 @@ footer{
 
 
 
+/* =============================ROOM=============================== */
+
+#room{
+    margin-top: 7%;
+    /* border: 2px solid white; */
+}
+
+.room-head{
+    /* background-color: red; */
+    border-radius: 1em;
+    min-height: 20em;
+    min-width: 50vw;
+    display: flex;
+    background-color: #0f161c;
+}
+
+.room-head-left{
+    width: 30%;
+    height: 20em;
+    /* border: 2px solid palevioletred; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.room-head-left img{
+    width: 90%;
+    border:2 px solid black ;
+    border-radius: 20rem;
+    aspect-ratio: 1/1;
+    /* border: 2px solid green; */
+}
+
+.room-head-right{
+    width: 70%;
+    height: 20em;
+    /* border: 2px solid rgb(112, 183, 216); */
+    padding:  0 0 0 3em;
+
+}
+
+.room-body{
+    min-width: 50vw;
+    min-height: 20em;
+    /* background-color: green ; */
+    background-color: #1d2d3b;  
+    border-radius: 1em;
+    padding: 2em;
+}
+
+
+
+
+
+/* =============================ROOM END=============================== */
 
 /* ====================================Animation========= */
   @keyframes gradient-animation {
@@ -535,4 +590,10 @@ footer{
 .ico img{
     width: 30px;
 
+}
+
+
+.fs-25{
+    font-size: 25px;
+    font-weight: 500;
 }
