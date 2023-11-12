@@ -7,18 +7,16 @@ backgroundImage = document.querySelector(".bg-img-input").files[0].name;
 var textAlign;
 var backgroundBlendMode;
 var rgba = "rgba(0,0,0,1)";
+var imgUrl = "";
 init();
 
 function init() {
   fontSize = document.querySelector("#fontsize-input").value;
   fontColor = document.querySelector("#fontcolor-input").value;
-  bgColorHandler();
-  bgColor = rgba;
   fontFamily = document.querySelector("#font-input").value;
   textAlign = document.getElementById("menfess-preview-content").style
     .textAlign;
   backgroundImage = document.querySelector(".bg-img-input").files[0].name;
-  backgroundBlendMode = document.querySelector("#bg-blend").value;
 }
 
 function fontSizeHandler(value) {
@@ -29,14 +27,15 @@ function fontSizeHandler(value) {
 function fontColorHandler(value) {
   previewContent.style.color = value;
 }
-function bgColorHandler() {
-  const alpha = document.querySelector("#alpha-input").value;
+function bgHandler() {
+  var alpha = document.querySelector("#alpha-input").value;
   var rawColor = document.querySelector("#bg-color").value;
+
   var hex = rawColor.substring(1); // Remove the '#' character
   var bigint = parseInt(hex, 16);
   var rgb = [(bigint >> 16) & 255, (bigint >> 8) & 255, bigint & 255];
   rgba = "rgba(" + rgb[0] + ", " + rgb[1] + ", " + rgb[2] + ", " + alpha + ")";
-  previewContent.style.backgroundColor = rgba;
+  previewContent.style.background = `linear-gradient(${rgba}, ${rgba}),url('${imgUrl}')`;
   document.getElementById("value-alpha").innerHTML = alpha;
 }
 
@@ -52,6 +51,7 @@ function bgImgHandler(event) {
     const reader = new FileReader();
 
     reader.onload = function (e) {
+      imgUrl = e.target.result;
       previewContent.style.backgroundImage = "url(" + e.target.result + ")";
     };
 
@@ -63,9 +63,7 @@ function fontAlignHandler(align) {
   previewContent.style.textAlign = align;
 }
 
-function bgBlendMode(mode) {
-  previewContent.style.backgroundBlendMode = mode;
-}
+
 
 function getImgName(url) {
   // Use a regular expression to match the filename with extension in the URL
@@ -82,6 +80,7 @@ function getImgName(url) {
 
 function generateCSS() {
   init();
-  let cssTxt = `font-size: ${fontSize}px;color: ${fontColor};background-color: ${bgColor};font-family: ${fontFamily};background-image: url(\\'../media/img/${backgroundImage}\\');text-align: ${textAlign};background-blend-mode: ${backgroundBlendMode};`;
+
+  let cssTxt = `font-size: ${fontSize}px;color: ${fontColor};font-family: ${fontFamily};background:linear-gradient(${rgba},${rgba}), url(\\'../media/img/${backgroundImage}\\');text-align: ${textAlign};`;
   document.getElementById("css-value").value = cssTxt;
 }

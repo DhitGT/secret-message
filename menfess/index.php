@@ -8,7 +8,7 @@ $userMail = $_SESSION['login'];
 $userId = getUserId($conn, $userMail);
 $following = getFollowing($conn, $userId);
 
-$sql = "SELECT roommenfess.id as idRoom,menfess.id, roommenfess.nama, menfess.ke, menfess.dari, menfess.isi,menfess.likes FROM menfess INNER JOIN following INNER JOIN roommenfess ON following.idRoom = roommenfess.id AND menfess.idRoom = roommenfess.id WHERE following.idUser = '$userId' ";
+$sql = "SELECT roommenfess.id as idRoom,menfess.id, roommenfess.nama, menfess.ke, menfess.dari, menfess.isi,menfess.likes FROM menfess INNER JOIN following INNER JOIN roommenfess ON following.idRoom = roommenfess.id AND menfess.idRoom = roommenfess.id WHERE following.idUser = '$userId' ORDER BY id DESC";
 $result = mysqli_query($conn, $sql);
 
 if (isset($_POST['submit'])) {  
@@ -33,9 +33,11 @@ if (isset($_POST['submit'])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Menfess</title>
+    
     <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css' rel='stylesheet'
         integrity='sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC' crossorigin='anonymous'>
     <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../responsive.css">
 </head>
 
 <body>

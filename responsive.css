@@ -1,0 +1,73 @@
+@media (max-width: 575.98px){
+    body{
+        padding-top: 30%;
+        overflow-x: hidden;
+        background-size: cover;
+    }
+    
+    .menfess-item{
+        margin: auto;
+        width: 90%;
+    }
+
+    #room, .fs-25{
+        font-size: 10px;
+    }
+
+    .room-head-right a{
+        font-size: 5px;
+        padding: 0.5em;
+    }
+    .rhr-3-item{
+        flex-wrap: wrap;
+        flex-direction: column;
+        gap: 1em;
+    }
+
+    .formTambahFess{
+        width: 100%;
+        font-size: x-small;
+    }
+
+    .form-control, .form-select{
+        font-size: x-small;
+    }
+
+    .wrapper-config{
+        flex-direction: column;
+    }
+
+    .wrapper-config .preview-config{
+        width: 100%;
+        margin-top: -10%;
+
+    }
+
+    .form-config{
+        overflow-x: scroll;
+        width: 100%;
+    }
+
+    .input-config{
+        display: flex;
+        gap: 2em;
+        width: 480vw;
+        flex-direction: row;
+        margin: 0%;
+    }
+
+    .input-config-item{
+        width: 60vw;
+    }
+
+
+
+
+
+
+
+
+    .footer-group{
+        flex-direction: column;
+    }
+}

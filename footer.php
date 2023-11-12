@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="responsive.css">
 <footer>
         <div class="footer-group">
             <div class="footer-1">  
