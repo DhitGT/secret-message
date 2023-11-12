@@ -391,10 +391,12 @@ footer{
     justify-content: space-around;
     background-repeat: no-repeat;
     background-size: cover;
-    background-blend-mode: normal;
     padding-left: 1em;
     font-family: "Comic Neue",cursive;
+    
 }
+
+
 
 #menfess-preview-content{
     font-size: 15px;
@@ -484,7 +486,7 @@ padding-top: 10%;
 .room-head-left{
     width: 30%;
     height: 20em;
-    border: 2px solid palevioletred;
+    /* border: 2px solid palevioletred; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -493,10 +495,10 @@ padding-top: 10%;
 
 .room-head-left img{
     width: 70%;
-    border:2 px solid black ;
+    border:2px solid black ;
     border-radius: 20rem;
     aspect-ratio: 1/1;
-    border: 2px solid green;
+    /* border: 2px solid green; */
 }
 
 .room-head-right{

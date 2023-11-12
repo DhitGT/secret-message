@@ -34,6 +34,8 @@ if (isset($_POST['submit'])) {
     <title>Menfess</title>
     <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC' crossorigin='anonymous'>
     <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../responsive.css">
+
 </head>
 
 <body>
@@ -41,11 +43,11 @@ if (isset($_POST['submit'])) {
 
     <section id="addFess" class="pt-10">
         <div class="container">
-            <div class="card card-dark p-5">
+            <div class="card card-dark lg-p-5">
                 <h4 align="center">Menfess Seseorang</h4>
-                <form action="" class="mt-2" method="post" class="form">
+                <form action="" class="mt-2 formTambahFess" method="post" class="form">
 
-                    <div class="sheet">
+                    <div class="sheet res-100">
                         <label for="chanel">Select Chanel</label>
                         <br>
                         <div class="chanel">
