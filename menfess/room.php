@@ -9,10 +9,11 @@ $userId = getUserId($conn, $userMail);
 $following = getFollowing($conn, $userId);
 $idroom = $_GET['id'];
 
-$sql = "SELECT roommenfess.id, roommenfess.nama, menfess.ke, menfess.dari, menfess.isi,menfess.likes FROM menfess INNER JOIN following INNER JOIN roommenfess ON following.idRoom = roommenfess.id AND menfess.idRoom = roommenfess.id WHERE roommenfess.id = '$idroom' ";
+$sql = "SELECT roommenfess.id,roommenfess.idUser as idUserAdmin, roommenfess.nama, menfess.ke, menfess.dari, menfess.isi,menfess.likes FROM menfess INNER JOIN roommenfess ON menfess.idRoom = roommenfess.id WHERE roommenfess.id = '$idroom' ";
 $result = mysqli_query($conn, $sql);
 
-
+$sqlRoom = "SELECT * FROM roommenfess WHERE id = '$idroom'";
+$resultSqlRoom = mysqli_fetch_assoc(mysqli_query($conn,$sqlRoom));
 
 ?>
 
@@ -35,24 +36,32 @@ $result = mysqli_query($conn, $sql);
         <div class="container">
             <div class="room-head">
                 <div class="room-head-left">
-                    <img src="../media/img/ridwan_kamil.jpg" alt="">
+                    <img src="../media/img/<?php echo $resultSqlRoom['foto'] ?>" alt="">
                 </div>
                 <div class="room-head-right d-flex flex-column justify-content-evenly">
                     <div class="room-head-right-1">
-                        <h1>Butun Fess</h1>
-                        <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem provident officiis nam facere eveniet et similique eum, harum reiciendis vitae autem quia quisquam, voluptate at explicabo itaque. Ad fugiat quam incidunt eum porro beatae!</span>
+                        <h1><?php echo $resultSqlRoom['nama'] ?></h1>
+                        <span><?php echo $resultSqlRoom['descript'] ?></span>
                     </div>
                     <div class="room-head-right-2 d-flex gap-3">
                         <div class="fs-25">
-                            <p>Follower : 12k</p>
+                            <p>Follower : <?php echo convertToKFormat($resultSqlRoom['followers']) ?></p>
                         </div>
                         <div class="fs-25">
-                            <p>Menfess : 150</p>
+                            <p>Menfess : <?php echo convertToKFormat($resultSqlRoom['totalMenfess']) ?></p>
                         </div>
                     </div>
                     <div class="room-head-right-3">
-                        <div class="rhr-3-item d-flex">
-                            <a href="room.php?id=2" class="btn btn-secondary w-50">Unfollow</a>
+                        <div class="rhr-3-item d-flex g-3">
+                            <?php if($userId == mysqli_fetch_assoc($result)['idUserAdmin']): ?>
+                                <a href="room.php?id=2" class="btn btn-secondary w-30 me-4">Admin</a>
+                            <?php else: ?>
+                                <a href="room.php?id=2" class="btn btn-secondary w-30 me-4">Unfollow</a>
+                            <?php endif ?>
+                            <a href="tambahFess.php" class="btn btn-primary w-50">Write Menfess</a>
+                            <?php if($userId == mysqli_fetch_assoc($result)['idUserAdmin']): ?>
+                                <a href="roomconfig.php?id=<?php echo $idroom ?>" class="btn btn-success w-30 ms-4">Configure Template</a>
+                            <?php endif ?>
                         </div>
                         <div class="rhr-3-item">
 
@@ -83,14 +92,14 @@ $result = mysqli_query($conn, $sql);
                         </div>
                     <?php endforeach ?>
 
-                    <a href="explore.php" class="btn btn-info w-100">Explore More Channel</a>
+                    <a href="explore.php" class="btn btn-primary w-100">Explore More Channel</a>
                 </div>
             </div>
         </div>
     </section>
     <?php include '../footer.php' ?>
 
-    <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM' crossorigin='anonymous'></script>
+    
 </body>
 
 </html>

@@ -5,7 +5,6 @@ body {
     /* background-repeat: no-repeat; */
     margin: 0;
     padding: 0;
-    padding-top: 1rem;
     background-color: #131E28;
     background-image: url('bg2.jpeg');
     background-repeat: no-repeat;
@@ -19,72 +18,44 @@ body {
 }
 
 ::-webkit-scrollbar {
-    width: 12px;
+    width: 5px;
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: #1d2d3b; /* Warna thumb (scrollbar) */
+    background-color: #1d2d3b16; /* Warna thumb (scrollbar) */
     border-radius: 10px;
 }
 
 ::-webkit-scrollbar-track {
-    background-color: #0f161c; /* Warna track (area di sekitar thumb) */
+    background-color: #0f161c1b; /* Warna track (area di sekitar thumb) */
 }
 
 
 nav{
     background-color: #0F161C;
-    width: 100vw;
-    display: flex;
-    padding: 10px 3rem ;
-    justify-content: space-between; 
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 20;
 }
 
-.logo img{
-    width: 20%;
-    margin-top: -3%;
-    margin-bottom: -13px;
-    mix-blend-mode:screen;
+.nav-link button:active{
+    border: none;
+    background-color: trans;
 }
 
-.nav-menfess{
-    padding-top:20px ;
-}
-#addChanel, #addFess{
-    padding-top: 6%;
+.nav-link, .nav-link button{
+    color: #c8d4e0;
 }
 
-.nav-menfess ul{
-    min-width: 45%;
-}
-
-nav ul{
-    display: flex;
-    width: 25%;
-    justify-content: space-between;
-}
-nav ul li{
-    list-style: none;
-    color: aliceblue;
-    cursor: pointer;
-}
-
-nav ul li:hover{
+.nav-link:hover, .nav-link button:hover{
+    color: #97a5b1;
     text-decoration: underline;
 }
 
-nav ul li a{
-    text-decoration: none;
-    color: aliceblue;
+
+.logo img{
+    width: 20%;
+
+    
 }
 
-nav .logo{
-    color: aquamarine;
-}
 
 .dropdown-item-header {
     border: none;
@@ -94,13 +65,12 @@ nav .logo{
     display: flex;
     width: 100%;
     min-height: 30rem;
-    margin-top:5rem;
     background-color: #0f161c;
     border-radius: 2em;
 }
 
 #body{
-    margin-top: 8rem;
+padding-top: 10%;
 }
 
 .dropdown-menu{
@@ -198,7 +168,7 @@ nav .logo{
 }
 
 #menfess{
-margin-top: 5rem;
+padding-top: 5rem;
 min-height: 50vh;
 display: flex;
 flex-direction: column;
@@ -386,7 +356,7 @@ footer{
 }
 
 #explore{
-    margin-top: 7rem;
+    padding-top: 7rem;
 }
 
 .wrapper-menfess {
@@ -394,25 +364,56 @@ footer{
     flex-wrap: wrap;
     justify-content: flex-start; /* Mengubah justify-content menjadi flex-start */
     align-items: flex-start;
-    gap: 5em;
+    gap:2em;
 }
 
 .menfess-item {
-    width: 46%;
-    min-height: 300px;
+    width: 31%;
+    font-size: 12px;
+    min-height: 150px;
     box-shadow: 4px 4px 4px 5px rgba(0, 0, 0, 0.493);
-    margin-right: auto; /* Menambahkan margin-left: auto pada semua item */
 }
 
 .menfess-body{
-    overflow-y: scroll;
-    height: 120px;
-
+    max-height: 120px;
+    
 }
 
+.menfess-content{
+    overflow-y: scroll;
+    border: 2px solid black;
+    aspect-ratio: 1;
+    margin-bottom: 2em;
+    padding: 1em;
+    display: flex;
+    background-color: rgb(0, 0, 0);
+    flex-direction: column;
+    justify-content: space-around;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: normal;
+    padding-left: 1em;
+    font-family: "Comic Neue",cursive;
+}
+
+#menfess-preview-content{
+    font-size: 15px;
+    color: black;
+    background-color: black;
+    font-family: "Comic Neue", cursive;
+    text-align: left;
+    background-blend-mode: normal;
+}
+
+.menfess-paper{
+    width: 80%;
+    overflow-y:inherit;
+    margin: auto;
+    padding-right: 1em;
+}
 
 .menfess-chanel{
-    background-color: #0f161c82;
+    background-color: #0b1014;
     padding: 0.4em 1em 0.1em 1em; 
 }
 
@@ -429,6 +430,11 @@ footer{
     min-height: 10rem;
     background-color: #131E28;
     padding: 1rem 3em;
+}
+
+.input-config{
+    max-height: 26rem;
+    overflow-y: scroll;
 }
 
 .bo-none{
@@ -462,7 +468,7 @@ footer{
 /* =============================ROOM=============================== */
 
 #room{
-    margin-top: 7%;
+padding-top: 10%;
     /* border: 2px solid white; */
 }
 
@@ -478,18 +484,19 @@ footer{
 .room-head-left{
     width: 30%;
     height: 20em;
-    /* border: 2px solid palevioletred; */
+    border: 2px solid palevioletred;
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
 }
 
 .room-head-left img{
-    width: 90%;
+    width: 70%;
     border:2 px solid black ;
     border-radius: 20rem;
     aspect-ratio: 1/1;
-    /* border: 2px solid green; */
+    border: 2px solid green;
 }
 
 .room-head-right{
@@ -514,6 +521,14 @@ footer{
 
 
 /* =============================ROOM END=============================== */
+/* ===================ROOM CONFIG============= */
+
+    .preview-config {
+        width: 40%; 
+    }
+
+
+/* ===================ROOM CONFIG END============= */
 
 /* ====================================Animation========= */
   @keyframes gradient-animation {
@@ -588,12 +603,46 @@ footer{
 }
 
 .ico img{
-    width: 30px;
+    width: 20px;
 
+}
+
+.ico img:hover{
+    cursor: pointer;
+    opacity: 0.5;
+}
+
+.ico img:active{
+    opacity: 0.1;
 }
 
 
 .fs-25{
     font-size: 25px;
     font-weight: 500;
+}
+
+.pt-10{
+    padding-top: 10%;
+}
+
+
+.fnt-grund {
+    font-family: 'GrundschriftRegular';
+    font-weight: normal;
+    font-style: normal;
+}
+
+.fnt-comic-neue{
+    font-family: 'Comic Neue', cursive;
+}
+
+.fnt-poppins{
+    font-family: 'PoppinsRegular';
+    font-weight: normal;
+    font-style: normal;
+}
+
+.c-black{
+    color:black;
 }

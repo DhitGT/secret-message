@@ -94,7 +94,7 @@
                     <h4 align="center">Trending Menfess</h4>
                     <p align="center">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio adipisci veritatis, ex tempora esse iste sequi voluptatum numquam magnam in?</p>
                     <div class="ngl-theme">
-                        <div class="menfess-example theme-item">
+                        <div class="menfess-example theme-item ">
                             <div>
                                 <div class="exam-head">
                                     <b>

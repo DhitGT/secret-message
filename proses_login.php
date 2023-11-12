@@ -17,7 +17,7 @@ if (mysqli_num_rows($result) > 0) {
       $_SESSION['loginid'] = $iduser;
 } else{
 	$info = "pasword atau email salah";
-   header("location:login.php?infoemail=$info $throwData");
+   header("location:login.php?infoemail=pasword atau email salah");
    }
 
 mysqli_close($conn);

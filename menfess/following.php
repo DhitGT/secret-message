@@ -46,7 +46,7 @@ session_start();
                                 <p>Followers : <span><?php echo $res['followers'] ?></span></p>
                             </div>
                             <div class="room-combine d-flex mt-2">
-                            <a href="room.php?id=<?php echo $res['id'] ?>" class="btn btn-success w-100">Lihat</a>
+                            <a href="room.php?id=<?php echo $res['idRoom'] ?>" class="btn btn-success w-100">Lihat</a>
                             </div>
                         </div>
                     </div>
@@ -56,7 +56,7 @@ session_start();
         </div>
     </section>
     <?php include '../footer.php' ?>
-    <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM' crossorigin='anonymous'></script>
+
 </body>
 
 </html>
