@@ -2,7 +2,10 @@
     <div class="ico me-4">
         <img src="../media/icon/love.png" class="icon" alt="" srcset="">
     </div>
-    <div class="ico">
+    <div class="ico me-auto">
         <img src="../media/icon/chat.png" class="icon" alt="">
+    </div>
+    <div class="ico">
+        <img src="../media/icon/download.png" class="icon" alt="">
     </div>
 </div>

@@ -39,7 +39,7 @@ if (isset($_POST['submit'])) {
 <body>
     <?php include '../layout/headerMenfess.php' ?>
 
-    <section id="addChanel" class="mt-5">
+    <section id="addChanel" class="pt-10">
         <div class="container">
             <div class="card card-dark p-5">
                 <h4 align="center">Buat Chanel Menfess</h4>
@@ -99,7 +99,7 @@ if (isset($_POST['submit'])) {
     </section>
     <?php include '../footer.php' ?>
 
-    <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM' crossorigin='anonymous'></script>
+    
 </body>
 
 </html>

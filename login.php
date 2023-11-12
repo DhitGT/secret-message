@@ -19,7 +19,7 @@ $infoPw = isset($_GET['infopw']) ? $_GET['infopw'] : ' ';
     <div class="wrapper">
         <form method="post" action="proses_login.php">
             <h1>Login</h1>
-            <label for="email" class="info"><?php echo $infomail ?></label>
+            
             <div class="input-box">
                 <input type="email" name="email" placeholder="Email" 
                 required value="<?php echo isset($_GET['email']) ? $_GET['email'] : ''  ?>">
@@ -34,7 +34,7 @@ $infoPw = isset($_GET['infopw']) ? $_GET['infopw'] : ' ';
             </label>
             
             </div>
-
+            <label for="email" class="info"><?php echo $infomail ?></label>
             <button type="submit" class="btn">Login</button>
 
             <div class="register-link">

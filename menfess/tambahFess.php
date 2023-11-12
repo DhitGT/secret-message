@@ -39,7 +39,7 @@ if (isset($_POST['submit'])) {
 <body>
     <?php include '../layout/headerMenfess.php' ?>
 
-    <section id="addFess">
+    <section id="addFess" class="pt-10">
         <div class="container">
             <div class="card card-dark p-5">
                 <h4 align="center">Menfess Seseorang</h4>
@@ -69,10 +69,7 @@ if (isset($_POST['submit'])) {
                             <hr>
                         </div>
                         <div class="message">
-                            <textarea name="message" id="" cols="30" rows="1" class="form-control bg-transparent bo-0 in-sheet" required>Some Message in here
-                            </textarea>
-
-
+                            <textarea name="message" id="" cols="30" rows="1" class="form-control bg-transparent bo-0 in-sheet" required>Some Message in here</textarea>
                             <hr>
                         </div>
                         <div class="from">
@@ -89,7 +86,6 @@ if (isset($_POST['submit'])) {
     </section>
     <?php include '../footer.php' ?>
 
-    <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM' crossorigin='anonymous'></script>
 </body>
 
 </html>
